@@ -1,0 +1,25 @@
+{
+  "name": "music-player-app",
+  "version": "1.0.0",
+  "description": "music player app",
+  "main": "mplay.js",
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "http-server": "^0.11.1",
+    "jshint": "^2.10.2",
+    "lodash": "^4.17.15"
+  },
+  "scripts": {
+    "open": "concurrently \"http-server -a localhost -p 1234\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max1mmus/Music-player-app.git"
+  },
+  "author": "Max1mmus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Max1mmus/Music-player-app/issues"
+  },
+  "homepage": "https://github.com/Max1mmus/Music-player-app#readme"
+}
