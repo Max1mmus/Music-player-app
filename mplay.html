@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mplay.css">
@@ -11,7 +11,33 @@
     <header>
       <h1>Music player app</h1>
     </header>
-    <div class="container"></div>
+    <!---Music player interface--->
+    <div class="interface">
+      <img id="nipper" src="ONipper.jpg">
+      <div class="playing">
+        <p id="cArtist"></p>
+        <p id="cSong"></p>
+        <p id="passedTime"></p>
+      </div>
+      <!---Music player commands--->
+      <div class="commands">
+        <div class="play">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div class="move">
+          <img id="bck" src="first1.png">
+          <img id="frw" src="last1.png">
+        </div>
+      </div>
+      <div class="vol">
+        <img id="au" src="au.png">
+        <div class="sliderContainer">
+          <input type="range" min="0" max="100" value="0" step="1" class="slider">
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="mplay.js"></script>
   </body>
 </html>
