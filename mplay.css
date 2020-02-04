@@ -167,14 +167,11 @@ p {
     background-color: blueviolet;
 }
 
-ul{
-    padding: 15px;
-}
-
 li {
     margin: 10px;
     list-style: decimal;
     width: auto;
+    padding: 3px;
 }
 
 .songName {
