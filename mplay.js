@@ -10,6 +10,7 @@ var next = document.getElementById("bck");
 var songList = document.querySelectorAll("li");
 
 //---Adding event listeners---//
+play.addEventListener("click", playPause);
 songList.forEach(el => {
     el.addEventListener("click", playthis);
 });
