@@ -126,6 +126,7 @@ p {
 #frw, #bck {
     width: 35px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #bck:hover,#frw:hover {
