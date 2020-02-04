@@ -26,10 +26,6 @@
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
-        <div class="move">
-          <img id="bck" src="first1.png">
-          <img id="frw" src="last1.png">
-        </div>
       </div>
       <div class="vol">
         <img id="au" src="au.png">
@@ -37,6 +33,34 @@
           <input type="range" min="0" max="100" value="0" step="1" class="slider">
         </div>
       </div>
+      <!---Progress Bar--->
+      <div id="bar">
+        <div id="progress"></div>
+      </div>
+    </div>
+      <audio id="audio" preload="metadata"></audio>
+     <!--Playlist interface-->
+    <div class="playlist">
+      <ul>
+        <li>
+          <div class="song" id="funk">
+            <div class="songName">Funkorama</div>
+            <div class="artist">Kevin McLeod</div>
+          </div>
+        </li>
+        <li>
+          <div class="song" id="cheery">
+            <div class="songName">Cheery Monday</div>
+            <div class="artist">Kevin McLeod</div>
+          </div>
+        </li>
+        <li>
+          <div class="song" id="aqua">
+            <div class="songName">Aquarium</div>
+            <div class="artist">Kevin McLeod</div>
+          </div>
+        </li>
+      </ul>
     </div>
     <script type="text/javascript" src="mplay.js"></script>
   </body>
