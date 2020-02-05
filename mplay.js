@@ -8,9 +8,9 @@ var progressBox = document.getElementById("progress");
 var frw = document.getElementById("frw");
 var bck = document.getElementById("bck");
 var songList = document.querySelectorAll("li");
-var playlist = [ { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/Funkorama.mp3"},
-                 { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/cheery.mp3"},
-                 { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/aquarium.mp3"}];
+var playlist = [ { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
+                 { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
+                 { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "media/aquarium.mp3"}];
 var x = 0;
 
 //---Adding event listeners---//
@@ -92,7 +92,6 @@ track.ontimeupdate = function updateTime(){
 
     var totalTime = min + ":" + sec;
     passedTime.innerHTML = totalTime;
-    
     if(track.currentTime < track.duration){
         progressBox.style.width = Math.round((track.currentTime / track.duration)*100) +"%"
     }
