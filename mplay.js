@@ -5,34 +5,65 @@ var currentSong = document.getElementById("cSong");
 var currentArtist = document.getElementById("cArtist");
 var passedTime = document.getElementById("passedTime");
 var progressBox = document.getElementById("progress");
-var prev = document.getElementById("frw");
-var next = document.getElementById("bck");
+var frw = document.getElementById("frw");
+var bck = document.getElementById("bck");
 var songList = document.querySelectorAll("li");
+var playlist = [ { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/Funkorama.mp3"},
+                 { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/cheery.mp3"},
+                 { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/aquarium.mp3"}];
+var x = 0;
 
 //---Adding event listeners---//
 play.addEventListener("click", playPause);
 songList.forEach(el => {
     el.addEventListener("click", playthis);
 });
+frw.addEventListener("click", playNext);
+bck.addEventListener("click", playPrev);
+
+//---Functions---//
+function playNext(){
+    if(x === playlist.length - 1){
+        x = 0;
+    }else{
+        x++;
+    }
+    track.src = playlist[x].source; 
+    currentSong.innerHTML = playlist[x].title;
+    currentArtist.innerHTML = playlist[x].artist;
+    playPause();
+}
+
+function playPrev(){
+    if(x === 0 ){
+        x = playlist.length - 1;
+    }else{
+        x--;
+    }
+    track.src = playlist[x].source; 
+    currentSong.innerHTML = playlist[x].title;
+    currentArtist.innerHTML = playlist[x].artist;
+    playPause();
+}
 
 function playthis(e){
    var target = e.target.firstChild.data;
-   currentArtist.innerHTML = "Kevin McLeod";
-console.log(e.target.firstChild.data)
-   if(target == "Aquarium"){
-        currentSong.innerHTML = target;
-        track.src = "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/aquarium.mp3";
-        playPause();
-   }
+   currentArtist.innerHTML = playlist[0].artist;
+
    if(target == "Funkorama"){
         currentSong.innerHTML = target;
-        track.src = "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/Funkorama.mp3";
+        track.src = playlist[0].source;
         playPause();    
    }
    if(target == "Cheery Monday"){
         currentSong.innerHTML = target;
-        track.src = "https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/cheery.mp3";
+        track.src = playlist[1].source;
         playPause();     
+   }
+   if(target == "Aquarium"){
+        currentSong.innerHTML = target;
+        track.src = playlist[2].source;
+        playPause();
    }
 }
 
@@ -61,9 +92,9 @@ track.ontimeupdate = function updateTime(){
 
     var totalTime = min + ":" + sec;
     passedTime.innerHTML = totalTime;
-    console.log(totalTime)
-
+    
     if(track.currentTime < track.duration){
         progressBox.style.width = Math.round((track.currentTime / track.duration)*100) +"%"
     }
 }
+
