@@ -1,6 +1,6 @@
 var play = document.querySelector(".play")
 var track = document.getElementById("audio")
-var volume = document.getElementsByClassName("slider");
+var volumeSlider = document.querySelector(".slider");
 var currentSong = document.getElementById("cSong");
 var currentArtist = document.getElementById("cArtist");
 var passedTime = document.getElementById("passedTime");
@@ -8,6 +8,7 @@ var progressBox = document.getElementById("progress");
 var frw = document.getElementById("frw");
 var bck = document.getElementById("bck");
 var songList = document.querySelectorAll("li");
+var volIcon = document.getElementById("au");
 var playlist = [ { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
                  { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
                  { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "media/aquarium.mp3"}];
@@ -20,6 +21,8 @@ songList.forEach(el => {
 });
 frw.addEventListener("click", playNext);
 bck.addEventListener("click", playPrev);
+volumeSlider.addEventListener("mousemove",setVolume);
+volIcon.addEventListener("click", muteVol);
 
 //---Functions---//
 function playNext(){
@@ -97,3 +100,16 @@ track.ontimeupdate = function updateTime(){
     }
 }
 
+function setVolume (){
+   track.volume = volumeSlider.value / 100
+}
+
+function muteVol(){
+    if(track.muted){
+        track.muted = false;
+        volIcon.src = "media/audio.png"
+    }else{
+        track.muted = true;
+        volIcon.src = "media/noau.png"
+    }
+}
