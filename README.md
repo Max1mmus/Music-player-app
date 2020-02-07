@@ -19,6 +19,7 @@
 * Current song - track time
 * Click on playlist items to play or change a song.
 * Click on play button to toggle play/pause on a current song.
+* Click on next/previous button to play next/previous song on playlist.
 
 #### Visual :
 
