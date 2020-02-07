@@ -14,12 +14,14 @@
 
 ### Current Features :
 
-* Custom made play/pause button
-* Progress bar
-* Current song - track time
-* Click on playlist items to play or change a song.
-* Click on play button to toggle play/pause on a current song.
-* Click on next/previous button to play next/previous song on playlist.
+* Custom made play/pause button;
+* Progress bar;
+* Current song - track time;
+* Click on playlist items to play or change a song;
+* Click on play button to toggle play/pause on a current song;
+* Click on next/previous button to play next/previous song on playlist;
+* Volume control;
+* Click on volume icon to toggle between mute/unmute;
 
 #### Visual :
 
