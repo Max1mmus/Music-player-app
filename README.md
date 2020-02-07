@@ -20,7 +20,7 @@
 * Click on playlist items to play or change a song;
 * Click on play button to toggle play/pause on a current song;
 * Click on next/previous button to play next/previous song on playlist;
-* Volume control;
+* Volume control via slider (hover over volume icon);
 * Click on volume icon to toggle between mute/unmute;
 
 #### Visual :
