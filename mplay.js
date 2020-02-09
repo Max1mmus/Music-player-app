@@ -9,9 +9,11 @@ var frw = document.getElementById("frw");
 var bck = document.getElementById("bck");
 var songList = document.querySelectorAll("li");
 var volIcon = document.getElementById("au");
-var playlist = [ { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
-                 { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
-                 { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "media/aquarium.mp3"}];
+const playlist = [
+    { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
+    { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
+    { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "media/aquarium.mp3"}
+];
 var x = 0;
 
 //---Adding event listeners---//
@@ -25,48 +27,32 @@ volumeSlider.addEventListener("mousemove",setVolume);
 volIcon.addEventListener("click", muteVol);
 
 //---Functions---//
-function playNext(){
-    if(x === playlist.length - 1){
-        x = 0;
-    }else{
-        x++;
-    }
+function currentS(){
     track.src = playlist[x].source; 
     currentSong.innerHTML = playlist[x].title;
     currentArtist.innerHTML = playlist[x].artist;
     playPause();
 }
 
+function playNext(){
+    x === playlist.length - 1 ? x = 0 : x++;
+    currentS();
+}
+
 function playPrev(){
-    if(x === 0 ){
-        x = playlist.length - 1;
-    }else{
-        x--;
-    }
-    track.src = playlist[x].source; 
-    currentSong.innerHTML = playlist[x].title;
-    currentArtist.innerHTML = playlist[x].artist;
-    playPause();
+    x === 0 ? x = playlist.length - 1 : x--;
+    currentS();
 }
 
 function playthis(e){
    var target = e.target.firstChild.data;
-   currentArtist.innerHTML = playlist[0].artist;
-
-   if(target == "Funkorama"){
-        currentSong.innerHTML = target;
-        track.src = playlist[0].source;
-        playPause();    
-   }
-   if(target == "Cheery Monday"){
-        currentSong.innerHTML = target;
-        track.src = playlist[1].source;
-        playPause();     
-   }
-   if(target == "Aquarium"){
-        currentSong.innerHTML = target;
-        track.src = playlist[2].source;
-        playPause();
+   for (let i = 0; i < playlist.length; i++) {
+       if (target === playlist[i].title){
+           currentSong.innerHTML = target;
+           track.src = playlist[i].source;
+           currentArtist.innerHTML = playlist[i].artist;
+           playPause(); 
+       } 
    }
 }
 
@@ -81,35 +67,30 @@ function playPause (){
         }
 }
 
-track.onloadedmetadata = function() {
-    console.log(track.duration)
-};
-
 track.ontimeupdate = function updateTime(){
     var min = Math.floor((track.currentTime % 3600) / 60);
     var sec = Math.floor(track.currentTime % 60);
     
-    if(sec<10){
-        sec = "0" + sec
+    if(sec < 10){
+        sec = "0" + sec;
     }
 
-    var totalTime = min + ":" + sec;
-    passedTime.innerHTML = totalTime;
+    passedTime.innerHTML = `${min}:${sec}`;
     if(track.currentTime < track.duration){
-        progressBox.style.width = Math.round((track.currentTime / track.duration)*100) +"%"
+        progressBox.style.width = Math.round((track.currentTime / track.duration)*100) +"%";
     }
 }
 
 function setVolume (){
-   track.volume = volumeSlider.value / 100
+   track.volume = volumeSlider.value / 100;
 }
 
 function muteVol(){
     if(track.muted){
         track.muted = false;
-        volIcon.src = "media/audio.png"
+        volIcon.src = "media/audio.png";
     }else{
         track.muted = true;
-        volIcon.src = "media/noau.png"
+        volIcon.src = "media/noau.png";
     }
 }
