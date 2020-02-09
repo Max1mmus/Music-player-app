@@ -1,20 +1,20 @@
-var play = document.querySelector(".play")
-var track = document.getElementById("audio")
-var volumeSlider = document.querySelector(".slider");
-var currentSong = document.getElementById("cSong");
-var currentArtist = document.getElementById("cArtist");
-var passedTime = document.getElementById("passedTime");
-var progressBox = document.getElementById("progress");
-var frw = document.getElementById("frw");
-var bck = document.getElementById("bck");
-var songList = document.querySelectorAll("li");
-var volIcon = document.getElementById("au");
+let play = document.querySelector(".play")
+let track = document.getElementById("audio")
+let volumeSlider = document.querySelector(".slider");
+let currentSong = document.getElementById("cSong");
+let currentArtist = document.getElementById("cArtist");
+let passedTime = document.getElementById("passedTime");
+let progressBox = document.getElementById("progress");
+let frw = document.getElementById("frw");
+let bck = document.getElementById("bck");
+let songList = document.querySelectorAll("li");
+let volIcon = document.getElementById("au");
 const playlist = [
     { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
     { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
     { "title" : "Aquarium",      "artist" : "Kevin McLeod", "source" : "media/aquarium.mp3"}
 ];
-var x = 0;
+let x = 0;
 
 //---Adding event listeners---//
 play.addEventListener("click", playPause);
@@ -45,7 +45,7 @@ function playPrev(){
 }
 
 function playthis(e){
-   var target = e.target.firstChild.data;
+   let target = e.target.firstChild.data;
    for (let i = 0; i < playlist.length; i++) {
        if (target === playlist[i].title){
            currentSong.innerHTML = target;
@@ -68,8 +68,8 @@ function playPause (){
 }
 
 track.ontimeupdate = function updateTime(){
-    var min = Math.floor((track.currentTime % 3600) / 60);
-    var sec = Math.floor(track.currentTime % 60);
+    let min = Math.floor((track.currentTime % 3600) / 60);
+    let sec = Math.floor(track.currentTime % 60);
     
     if(sec < 10){
         sec = "0" + sec;
