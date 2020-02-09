@@ -1,14 +1,14 @@
-let play = document.querySelector(".play")
-let track = document.getElementById("audio")
-let volumeSlider = document.querySelector(".slider");
-let currentSong = document.getElementById("cSong");
-let currentArtist = document.getElementById("cArtist");
-let passedTime = document.getElementById("passedTime");
-let progressBox = document.getElementById("progress");
-let frw = document.getElementById("frw");
-let bck = document.getElementById("bck");
-let songList = document.querySelectorAll("li");
-let volIcon = document.getElementById("au");
+const play = document.querySelector(".play")
+const track = document.getElementById("audio")
+const volumeSlider = document.querySelector(".slider");
+const currentSong = document.getElementById("cSong");
+const currentArtist = document.getElementById("cArtist");
+const passedTime = document.getElementById("passedTime");
+const progressBox = document.getElementById("progress");
+const frw = document.getElementById("frw");
+const bck = document.getElementById("bck");
+const songList = document.querySelectorAll("li");
+const volIcon = document.getElementById("au");
 const playlist = [
     { "title" : "Funkorama",     "artist" : "Kevin McLeod", "source" : "media/Funkorama.mp3"},
     { "title" : "Cheery Monday", "artist" : "Kevin McLeod", "source" : "media/cheery.mp3"},
