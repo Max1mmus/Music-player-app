@@ -9,6 +9,7 @@ const play = document.querySelector(".play"),
   bck = document.getElementById("bck"),
   songList = document.querySelector(".playlist"),
   volIcon = document.getElementById("au");
+
 const playlist = [{
     "title": "Funkorama",
     "artist": "Kevin McLeod",
