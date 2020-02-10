@@ -115,6 +115,7 @@ body {
   
   #au {
     width: 28px;
+    cursor: pointer;
   }
   
   .vol:hover .sliderContainer {
