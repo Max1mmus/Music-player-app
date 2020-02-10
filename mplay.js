@@ -45,12 +45,12 @@ function currentS() {
 }
 
 function playNext() {
-    x === playlist.length - 1 ? 0 : x++;
+    x = x === playlist.length - 1 ? x = 0 : x++;
     currentS();
 }
 
 function playPrev() {
-    x === 0 ? x = playlist.length - 1 : x--;
+    x = x === 0 ? x = playlist.length - 1 : x--;
     currentS();
 }
 
@@ -78,8 +78,8 @@ function playPause() {
 }
 
 track.ontimeupdate = function updateTime() {
-    const min = Math.floor((track.currentTime % 3600) / 60),
-        sec = Math.floor(track.currentTime % 60);
+    const min = Math.floor((track.currentTime % 3600) / 60);
+    let sec = Math.floor(track.currentTime % 60);
     if (sec < 10) sec = "0" + sec;
 
     passedTime.innerText = `${min}:${sec}`;
