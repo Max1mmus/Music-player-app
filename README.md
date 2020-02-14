@@ -1,5 +1,7 @@
 # Music player app
  My first music player app.
+ 
+ Sneak peek at GH page : ![Music player app](https://max1mmus.github.io/Music-player-app/)
 
 ## Made with:
  
