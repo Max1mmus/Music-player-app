@@ -44,13 +44,21 @@ function currentS() {
     playPause();
 }
 
-function playNext() {
-    x = x === playlist.length - 1 ? x = 0 : x++;
+function playNext(){
+    if (x === playlist.length - 1){
+        x = 0;
+    } else {
+        x++;
+    }
     currentS();
 }
 
-function playPrev() {
-    x = x === 0 ? x = playlist.length - 1 : x--;
+function playPrev(){
+    if (x === 0){
+        x = playlist.length - 1;
+    } else {
+        x--;
+    }
     currentS();
 }
 
