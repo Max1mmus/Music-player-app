@@ -13,6 +13,7 @@ body {
     width: 175px;
     grid-area: 1/ 1/ span 4/ span 2;
     margin: auto;
+    margin-left: 20px;
     border-radius: 10px;
   }
   
@@ -28,8 +29,8 @@ body {
   }
   
   .interface {
-    width: 370px;
-    height: 200px;
+    width: max-content;
+    height: max-content;
     background-color: lavender;
     display: grid;
     margin: auto;
