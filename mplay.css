@@ -1,6 +1,7 @@
-body {
+html, body {
     background: linear-gradient(to right, #3494e6, #ec6ead);
     font-family: "Amatic SC";
+    background-attachment: fixed;
   }
   
   h1 {
