@@ -146,7 +146,7 @@ body {
   }
   
   .playlist {
-    width: 20%;
+    width: 300px;
     margin: auto;
     background: aliceblue;
     border-radius: 10px;
