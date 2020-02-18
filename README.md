@@ -31,8 +31,8 @@
 
 ##### Music credits :
 
-Sources: ![Incopmetech](https://incompetech.filmmusic.io/);
+Sources: [Incopmetech](https://incompetech.filmmusic.io/);
 
 Artist: Kevin McLeod ;
 
-License: ![CC](http://creativecommons.org/licenses/by/4.0/)
+License: [CC](http://creativecommons.org/licenses/by/4.0/)
