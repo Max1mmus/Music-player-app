@@ -1,7 +1,11 @@
 # Music player app
  My first music player app.
  
- Sneak peek at GH page : https://max1mmus.github.io/Music-player-app/
+ Live version : [Music player](https://max1mmus.github.io/Music-player-app/)
+ 
+ #### Visual :
+
+<img src="https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/visual.png" width="400">
 
 ## Made with:
  
@@ -24,10 +28,6 @@
 * Click on next/previous button to play next/previous song on playlist;
 * Volume control via slider (hover over volume icon);
 * Click on volume icon to toggle between mute/unmute;
-
-#### Visual :
-
-<img src="https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/visual.png" width="400">
 
 ##### Music credits :
 
