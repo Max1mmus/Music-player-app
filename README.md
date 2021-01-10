@@ -16,7 +16,7 @@
 ### After you clone repo :
 
 1. run `npm install` to install packages.
-2. run `npm run open` to start local serv. @ http://localhost:1234/
+2. run `npm run open` to start local serv. @ http://localhost:8080/
 
 ### Current Features :
 
