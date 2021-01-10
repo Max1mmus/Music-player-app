@@ -1,188 +1,144 @@
 html, body {
-    background: linear-gradient(to right, #3494e6, #ec6ead);
-    font-family: "Amatic SC";
-    background-attachment: fixed;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 45px;
-    margin: 0px;
-  }
-  
-  #nipper {
-    width: 175px;
-    grid-area: 1/ 1/ span 4/ span 2;
-    margin: auto;
-    margin-left: 20px;
-    border-radius: 10px;
-  }
-  
-  .playing {
-    grid-area: 1/ 3/ span 4/ span 2;
-    margin: auto;
-    font-size: 25px;
-  }
-  
-  p {
-    margin: 0px;
-    word-wrap: anywhere;
-  }
-  
-  .interface {
-    width: 350px;
-    height: max-content;
-    background-color: lavender;
-    display: grid;
-    margin: auto;
-    grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
-    border-radius: 5px;
-  }
-  
-  .play {
-    display: flex;
-    cursor: pointer;
-    grid-row-start: 5;
-    justify-content: space-between;
-    margin-left: 2px;
-  }
-  
-  .bar1 {
-    height: 25px;
-    width: 5px;
-    background-color: black;
-    margin: 4px;
-    border-radius: 4px;
-  }
-  
-  .bar2 {
-    height: 26px;
-    width: 5px;
-    background-color: black;
-    border-radius: 4px;
-    transform: rotate(-55deg) translate(1px, 0px);
-    transition: 0.4s;
-  }
-  
-  .bar3 {
-    height: 25px;
-    width: 5px;
-    background-color: black;
-    border-radius: 4px;
-    transform: rotate(-115deg) translate(-9px, -9px);
-  }
-  
-  .change .bar2 {
-    transform: rotate(-180deg) translate(0px, -4px);
-    height: 25px;
-  }
-  
-  .change .bar3 {
-    opacity: 0;
-  }
-  
-  .material-icons-round {
-    font-family: 'Material Icons Round';
-    font-size: 40px;
-    cursor: pointer;
-  }
-  
-  .sliderContainer {
-    align-items: center;
-    width: max-content;
-    grid-column-start: 4;
-    display: grid;
-    visibility: hidden;
-  }
-  
-  .slider {
-    width: 100px;
-    cursor: pointer;
-  
-  }
-  
-  #artist,
-  #song {
-    margin: 0px;
-  }
-  
-  .vol {
-    width: max-content;
-    grid-column-start: 3;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    grid-column-end: 5;
-  }
-  
-  #au {
-    width: 28px;
-    cursor: pointer;
-  }
-  
-  .vol:hover .sliderContainer {
-    visibility: visible;
-  }
-  
-  #frw,
-  #bck {
-    width: 35px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #bck:hover,
-  #frw:hover {
-    background-color: rgb(208, 161, 252);
-  }
-  
-  .nextOrPrev {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .commands {
-    display: flex;
-    justify-content: space-between;
-    grid-column-end: span 2;
-  }
-  
-  .playlist {
-    width: 300px;
-    margin: auto;
-    background: aliceblue;
-    border-radius: 10px;
-  }
-  
-  #bar {
-    width: 300px;
-    height: 20px;
-    grid-row-start: 6;
-    grid-column-end: span 4;
-    background: #d2a6fa;
-    margin: auto;
-  }
-  
-  #progress {
-    width: 20px;
-    height: 20px;
-    background-color: blueviolet;
-  }
-  
-  li {
-    margin: 10px;
-    width: auto;
-    padding: 3px;
-  }
-  
-  li:hover {
-    background: lavender;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .songName {
-    font-size: 30px;
-    text-decoration: underline;
-  }
+  background: linear-gradient(to right, #3494e6, #ec6ead);
+  font-family: "Amatic SC";
+  background-attachment: fixed;
+}
+h1 {
+  text-align: center;
+  font-size: 45px;
+}
+#nipper {
+  width: 150px;
+  grid-area: 1/ 1/ span 4/ span 2;
+  margin: auto;
+  margin-left: 25px;
+}
+#nipper,.interface,.bar1,.bar2,.bar3,#frw,#bck,.commands,.playlist {
+  border-radius: 5px;
+}
+.playing {
+  grid-area: 1/ 3/ span 4/ span 2;
+  font-size: 25px;
+}
+p {
+  word-wrap: anywhere;
+}
+.interface {
+  width: 340px;
+  height: max-content;
+  background-color: lavender;
+  display: grid;
+  grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
+}
+.play {
+  display: flex;
+  cursor: pointer;
+  grid-row-start: 5;
+  justify-content: space-between;
+  margin-left: 2px;
+}
+.bar1,.bar2,.bar3 {
+  width: 5px;
+  background-color: black;
+}
+.bar1 {
+  height: 25px;
+  margin: 4px;
+}
+.bar2 {
+  height: 26px;
+  transform: rotate(-55deg) translate(1px, 0px);
+  transition: 0.4s;
+}
+.bar3 {
+  height: 25px;
+  transform: rotate(-115deg) translate(-9px, -9px);
+}
+.change .bar2 {
+  transform: rotate(-180deg) translate(0px, -4px);
+  height: 25px;
+}
+.change .bar3 {
+  opacity: 0;
+}
+.material-icons-round {
+  font-family: 'Material Icons Round';
+  font-size: 40px;
+  cursor: pointer;
+}
+.sliderContainer {
+  width: max-content;
+  visibility: hidden;
+}
+.slider {
+  width: 100px;
+  cursor: pointer;
+}
+#artist,#song,h1,p {
+  margin: 0px;
+}
+.vol {
+  width: max-content;
+  grid-column-start: 3;
+  display: flex;
+  align-items: end;
+  grid-column-end: 5;
+}
+#au {
+  width: 28px;
+  cursor: pointer;
+}
+.vol:hover .sliderContainer {
+  visibility: visible;
+}
+#frw,#bck {
+  width: 35px;
+  cursor: pointer;
+}
+#bck:hover,#frw:hover {
+  background-color: rgb(208, 161, 252);
+}
+.nextOrPrev {
+  display: flex;
+  justify-content: center;
+}
+.commands {
+  display: flex;
+  justify-content: space-between;
+  grid-column-end: span 2;
+  margin-left: 25px;
+}
+.playlist,#bar,.playing,.vol,.interface {
+  margin: auto;
+}
+.playlist {
+  width: 300px;
+  background: aliceblue;
+}
+#bar {
+  width: 300px;
+  height: 20px;
+  grid-row-start: 6;
+  grid-column-end: span 4;
+  background: #d2a6fa;
+}
+#progress {
+  width: 20px;
+  height: 20px;
+  background-color: blueviolet;
+}
+li {
+  margin: 10px;
+  width: auto;
+  padding: 3px;
+}
+li:hover {
+  background: lavender;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.songName {
+  font-size: 30px;
+  text-decoration: underline;
+}
   
