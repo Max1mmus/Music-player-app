@@ -4,13 +4,11 @@
   "description": "music player app",
   "main": "mplay.js",
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "http-server": "^0.12.1",
     "jshint": "^2.11.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.20"
   },
   "scripts": {
-    "open": "concurrently \"http-server -a localhost -p 1234\""
+    "open": "http-server -a localhost -c-1 -p 8080"
   },
   "repository": {
     "type": "git",
@@ -21,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Max1mmus/Music-player-app/issues"
   },
-  "homepage": "https://github.com/Max1mmus/Music-player-app#readme"
+  "homepage": "https://github.com/Max1mmus/Music-player-app#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
 }
