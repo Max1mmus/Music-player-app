@@ -1,14 +1,14 @@
 const play = document.querySelector(".play"),
-    track = document.getElementById("audio"),
-    volumeSlider = document.querySelector(".slider"),
-    currentSong = document.getElementById("cSong"),
-    currentArtist = document.getElementById("cArtist"),
-    passedTime = document.getElementById("passedTime"),
-    progressBox = document.getElementById("progress"),
-    frw = document.getElementById("frw"),
-    bck = document.getElementById("bck"),
-    songList = document.querySelector(".playlist"),
-    volIcon = document.getElementById("au");
+      track = document.getElementById("audio"),
+      volumeSlider = document.querySelector(".slider"),
+      currentSong = document.getElementById("cSong"),
+      currentArtist = document.getElementById("cArtist"),
+      passedTime = document.getElementById("passedTime"),
+      progressBox = document.getElementById("progress"),
+      frw = document.getElementById("frw"),
+      bck = document.getElementById("bck"),
+      songList = document.querySelector(".playlist"),
+      volIcon = document.getElementById("au");
 
 const playlist = [
     {
@@ -36,16 +36,15 @@ bck.addEventListener("click", playPrev);
 volumeSlider.addEventListener("mousemove", setVolume);
 volIcon.addEventListener("click", muteVol);
 
-// ---Functions---//
-function currentS() {
+function currentS () {
     track.src = playlist[x].source;
     currentSong.innerText = playlist[x].title;
     currentArtist.innerText = playlist[x].artist;
     playPause();
 }
 
-function playNext(){
-    if (x === playlist.length - 1){
+function playNext () {
+    if (x === playlist.length - 1) {
         x = 0;
     } else {
         x++;
@@ -53,8 +52,8 @@ function playNext(){
     currentS();
 }
 
-function playPrev(){
-    if (x === 0){
+function playPrev () {
+    if (x === 0) {
         x = playlist.length - 1;
     } else {
         x--;
@@ -62,7 +61,7 @@ function playPrev(){
     currentS();
 }
 
-function playThis(e) {
+function playThis (e) {
     const targeted = e.target.firstChild.data;
     for (let i = 0; i < playlist.length; i++) {
         if (targeted === playlist[i].title) {
@@ -74,7 +73,7 @@ function playThis(e) {
     }
 }
 
-function playPause() {
+function playPause () {
 
     if (track.paused) {
         play.classList.toggle("change", true);
@@ -85,23 +84,25 @@ function playPause() {
     }
 }
 
-track.ontimeupdate = function updateTime() {
+track.ontimeupdate = updateTime;
+
+function updateTime () {
     const min = Math.floor((track.currentTime % 3600) / 60);
     let sec = Math.floor(track.currentTime % 60);
-    if (sec < 10) sec = "0" + sec;
+    if (sec < 10) sec = `0${sec}`;
 
     passedTime.innerText = `${min}:${sec}`;
 
     if (track.currentTime < track.duration) {
         progressBox.style.width = Math.round((track.currentTime / track.duration) * 100) + "%";
     }
-};
+}
 
-function setVolume() {
+function setVolume () {
     track.volume = volumeSlider.value / 100;
 }
 
-function muteVol() {
+function muteVol () {
     if (track.muted) {
         track.muted = false;
         volIcon.src = "media/audio.png";
