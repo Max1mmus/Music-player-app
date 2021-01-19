@@ -69,7 +69,6 @@ function playPause () {
     audio.paused ? audio.play() : audio.pause();
     audio.paused ? playBtn.classList.toggle("change", false) : playBtn.classList.toggle("change", true);
 }
-}
 
 function updateTime () {
     const min = Math.floor((audio.currentTime % 3600) / 60);
@@ -77,14 +76,13 @@ function updateTime () {
 
     if (sec < 10) sec = `0${sec}`;
     passedTime.innerText = `${min}:${sec}`;
-
-    if (track.currentTime < track.duration) {
-        progressBox.style.width = Math.round((track.currentTime / track.duration) * 100) + "%";
+    if (audio.currentTime < audio.duration) {
+        progressBox.style.width = Math.round((audio.currentTime / audio.duration) * 100) + "%";
     }
 }
 
 function setVolume () {
-    track.volume = volumeSlider.value / 100;
+    audio.volume = volumeSlider.value / 100;
 }
 
 function muteVol () {
