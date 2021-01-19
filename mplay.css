@@ -13,7 +13,7 @@ h1 {
   margin: auto;
   margin-left: 25px;
 }
-#nipper,.interface,.bar1,.bar2,.bar3,#frw,#bck,.commands,.playlist {
+#nipper,.interface,.bar1,.bar2,.bar3,#play-next,#play-previous,.commands,.playlist {
   border-radius: 5px;
 }
 .playing {
@@ -30,7 +30,8 @@ p {
   display: grid;
   grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
 }
-.play {
+
+.play-btn {
   display: flex;
   cursor: pointer;
   grid-row-start: 5;
@@ -61,6 +62,7 @@ p {
 .change .bar3 {
   opacity: 0;
 }
+
 .material-icons-round {
   font-family: 'Material Icons Round';
   font-size: 40px;
@@ -77,28 +79,28 @@ p {
 #artist,#song,h1,p {
   margin: 0px;
 }
-.vol {
+.volume-controls {
   width: max-content;
   grid-column-start: 3;
   display: flex;
   align-items: end;
   grid-column-end: 5;
 }
-#au {
+.volume-controls:hover .sliderContainer {
+  visibility: visible;
+}
+#vol-icon {
   width: 28px;
   cursor: pointer;
 }
-.vol:hover .sliderContainer {
-  visibility: visible;
-}
-#frw,#bck {
+#play-previous,#play-next {
   width: 35px;
   cursor: pointer;
 }
-#bck:hover,#frw:hover {
+#play-previous:hover,#play-next:hover {
   background-color: rgb(208, 161, 252);
 }
-.nextOrPrev {
+.next-prev-controls {
   display: flex;
   justify-content: center;
 }
@@ -108,7 +110,7 @@ p {
   grid-column-end: span 2;
   margin-left: 25px;
 }
-.playlist,#bar,.playing,.vol,.interface {
+.playlist,#bar,.playing,.volume-controls,.interface {
   margin: auto;
 }
 .playlist {
@@ -128,17 +130,18 @@ p {
   background-color: blueviolet;
 }
 li {
-  margin: 10px;
-  width: auto;
-  padding: 3px;
+  padding: 5px;
 }
 li:hover {
   background: lavender;
   border-radius: 10px;
   cursor: pointer;
 }
-.songName {
+.song-name {
   font-size: 30px;
   text-decoration: underline;
+}
+.playlist-wrapper {
+  margin-top: 10px;
 }
   
