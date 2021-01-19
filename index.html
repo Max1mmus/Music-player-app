@@ -11,38 +11,41 @@
     <header>
       <h1>Music player app</h1>
     </header>
+
     <!---Music player interface--->
     <div class="interface">
       <img id="nipper" src="media/ONipper.jpg">
       <div class="playing">
-        <p id="cArtist"></p>
-        <p id="cSong"></p>
+        <p id="current-artist"></p>
+        <p id="current-song"></p>
         <p id="passedTime"></p>
       </div>
+
       <!---Music player commands--->
       <div class="commands">
-        <div class="play">
+        <div class="play-btn">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
-        <div class="nextOrPrev">
-          <img id="bck" src="media/previous.png">
-          <img id="frw" src="media/next.png">
+        <div class="next-prev-controls">
+          <img id="play-previous" src="media/previous.png">
+          <img id="play-next" src="media/next.png">
         </div>
       </div>
-      <div class="vol">
-        <img id="au" src="media/audio.png">
+      <div class="volume-controls">
+        <img id="vol-icon" src="media/unmute.png">
         <div class="sliderContainer">
           <input type="range" min="0" max="100" step="1" class="slider">
         </div>
       </div>
+
       <!---Progress Bar--->
       <div id="bar">
         <div id="progress"></div>
       </div>
     </div>
-      <audio id="audio" preload="metadata"></audio>
+    <audio id="audio" preload="metadata"></audio>
      <!--Playlist-->
     <div>
       <ol class="playlist">
