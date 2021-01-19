@@ -68,14 +68,9 @@ function playWhich (e) {
 }
 
 function playPause () {
-
-    if (track.paused) {
-        play.classList.toggle("change", true);
-        track.play();
-    } else {
-        play.classList.toggle("change", false);
-        track.pause();
-    }
+    audio.paused ? audio.play() : audio.pause();
+    audio.paused ? playBtn.classList.toggle("change", false) : playBtn.classList.toggle("change", true);
+}
 }
 
 track.ontimeupdate = updateTime;
