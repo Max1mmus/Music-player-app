@@ -1,14 +1,13 @@
-const play = document.querySelector(".play"),
-      track = document.getElementById("audio"),
+const playBtn = document.querySelector("div.play-btn"),
+      audio = document.getElementById("audio"),
       volumeSlider = document.querySelector(".slider"),
-      currentSong = document.getElementById("cSong"),
-      currentArtist = document.getElementById("cArtist"),
+      currentSong = document.getElementById("current-song"),
+      currentArtist = document.getElementById("current-artist"),
       passedTime = document.getElementById("passedTime"),
       progressBox = document.getElementById("progress"),
-      frw = document.getElementById("frw"),
-      bck = document.getElementById("bck"),
+      previousNextControls = document.querySelector("div.next-prev-controls"),
       songList = document.querySelector(".playlist"),
-      volIcon = document.getElementById("au");
+      volIcon = document.getElementById("vol-icon");
 
 const playlist = [
     {
