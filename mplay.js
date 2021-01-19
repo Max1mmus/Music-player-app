@@ -64,8 +64,6 @@ function playPrev () {
 function playWhich (e) {
     e.target.id === "play-next" ? playNext() : playPrev();
 }
-    }
-}
 
 function playPause () {
     audio.paused ? audio.play() : audio.pause();
@@ -73,13 +71,11 @@ function playPause () {
 }
 }
 
-track.ontimeupdate = updateTime;
-
 function updateTime () {
-    const min = Math.floor((track.currentTime % 3600) / 60);
-    let sec = Math.floor(track.currentTime % 60);
-    if (sec < 10) sec = `0${sec}`;
+    const min = Math.floor((audio.currentTime % 3600) / 60);
+    let sec = Math.floor(audio.currentTime % 60);
 
+    if (sec < 10) sec = `0${sec}`;
     passedTime.innerText = `${min}:${sec}`;
 
     if (track.currentTime < track.duration) {
