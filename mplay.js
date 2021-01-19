@@ -43,21 +43,21 @@ function currentS () {
 }
 
 function playNext () {
-    if (x === playlist.length - 1) {
-        x = 0;
+    if (songPlayingIndex === playlist.length - 1) {
+        songPlayingIndex = 0;
     } else {
-        x++;
+        songPlayingIndex++;
     }
-    currentS();
+    playSong(songPlayingIndex);
 }
 
 function playPrev () {
-    if (x === 0) {
-        x = playlist.length - 1;
+    if (songPlayingIndex === 0) {
+        songPlayingIndex = playlist.length - 1;
     } else {
-        x--;
+        songPlayingIndex--;
     }
-    currentS();
+    playSong(songPlayingIndex);
 }
 
 function playThis (e) {
