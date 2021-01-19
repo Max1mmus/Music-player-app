@@ -61,15 +61,9 @@ function playPrev () {
     playSong(songPlayingIndex);
 }
 
-function playThis (e) {
-    const targeted = e.target.firstChild.data;
-    for (let i = 0; i < playlist.length; i++) {
-        if (targeted === playlist[i].title) {
-            currentSong.innerText = targeted;
-            track.src = playlist[i].source;
-            currentArtist.innerText = playlist[i].artist;
-            playPause();
-        }
+function playWhich (e) {
+    e.target.id === "play-next" ? playNext() : playPrev();
+}
     }
 }
 
