@@ -86,11 +86,10 @@ function setVolume () {
 }
 
 function muteVol () {
-    if (track.muted) {
-        track.muted = false;
-        volIcon.src = "media/audio.png";
-    } else {
-        track.muted = true;
-        volIcon.src = "media/noau.png";
-    }
+    audio.muted = !audio.muted;
+    volIcon.src = changeVolIcon(audio.muted);
+}
+
+function changeVolIcon (isMuted) {
+    return isMuted ? "media/mute.png" : "media/unmute.png";
 }
