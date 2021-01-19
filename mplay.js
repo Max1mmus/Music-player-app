@@ -9,31 +9,54 @@ const playBtn = document.querySelector("div.play-btn"),
       songList = document.querySelector(".playlist"),
       volIcon = document.getElementById("vol-icon");
 
-const playlist = [
-    {
-        "title": "Funkorama",
-        "artist": "Kevin McLeod",
-        "source": "media/Funkorama.mp3"
-    },
-    {
-        "title": "Cheery Monday",
-        "artist": "Kevin McLeod",
-        "source": "media/cheery.mp3"
-    },
-    {
-        "title": "Aquarium",
-        "artist": "Kevin McLeod",
-        "source": "media/aquarium.mp3"
-    }
-];
-let x = 0;
-// ---Adding event listeners---//
-play.addEventListener("click", playPause);
-songList.addEventListener("click", playThis);
-frw.addEventListener("click", playNext);
-bck.addEventListener("click", playPrev);
+playBtn.addEventListener("click", playPause);
+previousNextControls.addEventListener("click", playWhich);
 volumeSlider.addEventListener("mousemove", setVolume);
 volIcon.addEventListener("click", muteVol);
+audio.ontimeupdate = updateTime;
+
+const playlist = [];
+let songPlayingIndex = 0;
+
+class Song {
+    constructor (title, artist, source) {
+        this.title = title;
+        this.artist = artist;
+        this.source = source;
+    }
+}
+
+function addNewSong (title, artist, source) {
+    const songItem = new Song(title, artist, source);
+
+    return playlist.push(songItem);
+}
+
+addNewSong("Funkorama", "Kevin McLeod", "media/Funkorama.mp3");
+addNewSong("Cheery Monday", "Kevin McLeod", "media/cheery.mp3");
+addNewSong("Aquarium", "Kevin McLeod", "media/aquarium.mp3");
+
+function createSongCards () {
+    for (let i = 0; i < playlist.length; i++) {
+        const card = document.createElement("li");
+        const artistName = document.createElement("p");
+        const songName = document.createElement("p");
+
+        card.className = "song-card";
+        artistName.className = "artist";
+        songName.className = "song-name";
+        songList.appendChild(card);
+        card.appendChild(songName);
+        card.appendChild(artistName);
+
+        songName.innerText = playlist[i].title;
+        artistName.innerText = playlist[i].artist;
+
+        card.onclick = function () {
+            playSong(i);
+        };
+    }
+}
 
 function playSong (songIndex) {
     audio.src = playlist[songIndex].source;
