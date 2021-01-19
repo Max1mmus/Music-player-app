@@ -35,10 +35,11 @@ bck.addEventListener("click", playPrev);
 volumeSlider.addEventListener("mousemove", setVolume);
 volIcon.addEventListener("click", muteVol);
 
-function currentS () {
-    track.src = playlist[x].source;
-    currentSong.innerText = playlist[x].title;
-    currentArtist.innerText = playlist[x].artist;
+function playSong (songIndex) {
+    audio.src = playlist[songIndex].source;
+    currentSong.innerText = playlist[songIndex].title;
+    currentArtist.innerText = playlist[songIndex].artist;
+    songPlayingIndex = songIndex;
     playPause();
 }
 
