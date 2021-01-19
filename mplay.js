@@ -93,3 +93,11 @@ function muteVol () {
 function changeVolIcon (isMuted) {
     return isMuted ? "media/mute.png" : "media/unmute.png";
 }
+
+createSongCards();
+
+(function loadDefaultTrack () {
+    audio.src = playlist[songPlayingIndex].source;
+    currentSong.innerText = playlist[songPlayingIndex].title;
+    currentArtist.innerText = playlist[songPlayingIndex].artist;
+}());
