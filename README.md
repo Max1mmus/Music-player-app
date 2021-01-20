@@ -1,5 +1,5 @@
 # Music player app
- My first music player app.
+ My first minimalistic music player app.
  
  Live version : [Music player](https://max1mmus.github.io/Music-player-app/)
  
@@ -24,9 +24,9 @@
 * Progress bar;
 * Current song - track time;
 * Click on playlist items to play or change a song;
-* Click on play button to toggle play/pause on a current song;
+* Click on play button to toggle play/pause;
 * Click on next/previous button to play next/previous song on playlist;
-* Volume control via slider (hover over volume icon);
+* Volume control via slider;
 * Click on volume icon to toggle between mute/unmute;
 
 ##### Music credits :
@@ -35,4 +35,4 @@ Sources: [Incopmetech](https://incompetech.filmmusic.io/);
 
 Artist: Kevin McLeod ;
 
-License: [CC](http://creativecommons.org/licenses/by/4.0/)
+License: [CC](http://creativecommons.org/licenses/by/4.0/);
