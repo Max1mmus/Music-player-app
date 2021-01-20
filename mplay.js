@@ -1,22 +1,26 @@
 const playBtn = document.querySelector("div.play-btn"),
       audio = document.getElementById("audio"),
-      volumeSlider = document.querySelector(".slider"),
+      volumeSlider = document.querySelector(".vol-slider"),
       currentSong = document.getElementById("current-song"),
       currentArtist = document.getElementById("current-artist"),
       passedTime = document.getElementById("passedTime"),
       progressBox = document.getElementById("progress"),
       previousNextControls = document.querySelector("div.next-prev-controls"),
       songList = document.querySelector(".playlist"),
-      volIcon = document.getElementById("vol-icon");
+      volIcon = document.getElementById("vol-icon"),
+      playlistWrapper = document.querySelector("div.playlist-wrapper"),
+      dropdown = document.getElementById("dropdown-icon");
 
 playBtn.addEventListener("click", playPause);
 previousNextControls.addEventListener("click", playWhich);
 volumeSlider.addEventListener("mousemove", setVolume);
 volIcon.addEventListener("click", muteVol);
+dropdown.addEventListener("click", toggleDropdown);
 audio.ontimeupdate = updateTime;
 
 const playlist = [];
 let songPlayingIndex = 0;
+let toggle = false;
 
 class Song {
     constructor (title, artist, source) {
@@ -115,6 +119,12 @@ function muteVol () {
 
 function changeVolIcon (isMuted) {
     return isMuted ? "media/mute.png" : "media/unmute.png";
+}
+
+function toggleDropdown () {
+    toggle = !toggle;
+    toggle ? dropdown.style = "transform: rotate(-180deg);" : dropdown.style = "transform: rotate(0deg);";
+    toggle ? playlistWrapper.classList.add("show") : playlistWrapper.classList.remove("show");
 }
 
 createSongCards();
