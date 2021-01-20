@@ -5,7 +5,7 @@
  
  #### Visual :
 
-<img src="https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/visual.png" width="400">
+<img src="https://raw.githubusercontent.com/Max1mmus/Music-player-app/master/media/visual.png" width="600">
 
 ## Made with:
  
