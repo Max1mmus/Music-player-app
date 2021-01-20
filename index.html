@@ -15,14 +15,14 @@
     <!---Music player interface--->
     <div class="interface">
       <img id="nipper" src="media/ONipper.jpg">
-      <div class="playing">
+      <div class="currently-playing">
         <p id="current-artist"></p>
         <p id="current-song"></p>
         <p id="passedTime"></p>
       </div>
 
       <!---Music player commands--->
-      <div class="commands">
+      <div class="play-controls">
         <div class="play-btn">
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -35,15 +35,16 @@
       </div>
       <div class="volume-controls">
         <img id="vol-icon" src="media/unmute.png">
-        <div class="sliderContainer">
-          <input type="range" min="0" max="100" step="1" class="slider">
+        <div class="slider-container">
+          <input type="range" min="0" max="100" step="10" class="vol-slider">
         </div>
       </div>
-
+      
       <!---Progress Bar--->
-      <div id="bar">
+      <div id="progress-bar">
         <div id="progress"></div>
       </div>
+      <img id="dropdown-icon" src="media/dropdown.png">
     </div>
     <audio id="audio" preload="metadata"></audio>
 
