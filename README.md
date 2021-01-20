@@ -29,6 +29,9 @@
 * Volume control via slider;
 * Click on volume icon to toggle between mute/unmute;
 
+* New :* 
+* Added slider to toggle show / hide playlist
+
 ##### Music credits :
 
 Sources: [Incopmetech](https://incompetech.filmmusic.io/);
