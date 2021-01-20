@@ -3,145 +3,177 @@ html, body {
   font-family: "Amatic SC";
   background-attachment: fixed;
 }
+
 h1 {
   text-align: center;
   font-size: 45px;
+  margin-bottom: 5px;
 }
+
+.interface {
+  width: 340px;
+  height: 171px;
+  background-color: lavender;
+  display: grid;
+  grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
+  margin: auto;
+  padding: 3px;
+}
+
 #nipper {
   width: 150px;
   grid-area: 1/ 1/ span 4/ span 2;
   margin: auto;
-  margin-left: 25px;
 }
-#nipper,.interface,.bar1,.bar2,.bar3,#play-next,#play-previous,.commands,.playlist {
-  border-radius: 5px;
-}
-.playing {
+
+.currently-playing {
   grid-area: 1/ 3/ span 4/ span 2;
-  font-size: 25px;
+  font-size: 21px;
+  margin: auto;
 }
-p {
-  word-wrap: anywhere;
-}
-.interface {
-  width: 340px;
-  height: max-content;
-  background-color: lavender;
-  display: grid;
-  grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
+
+.play-controls {
+  display: flex;
+  justify-content: space-between;
+  grid-column-end: span 2;
 }
 
 .play-btn {
   display: flex;
-  cursor: pointer;
-  grid-row-start: 5;
-  justify-content: space-between;
-  margin-left: 2px;
 }
 .bar1,.bar2,.bar3 {
   width: 5px;
   background-color: black;
 }
 .bar1 {
-  height: 25px;
+  height: 19px;
   margin: 4px;
 }
 .bar2 {
-  height: 26px;
-  transform: rotate(-55deg) translate(1px, 0px);
+  height: 18px;
+  transform: rotate(-54deg) translate(-2px, 0px);
   transition: 0.4s;
 }
 .bar3 {
-  height: 25px;
-  transform: rotate(-115deg) translate(-9px, -9px);
+  height: 17px;
+  transform: rotate(-118deg) translate(-5px, -10px);
 }
 .change .bar2 {
   transform: rotate(-180deg) translate(0px, -4px);
-  height: 25px;
+  height: 19px;
 }
 .change .bar3 {
   opacity: 0;
 }
-
-.material-icons-round {
-  font-family: 'Material Icons Round';
-  font-size: 40px;
-  cursor: pointer;
-}
-.sliderContainer {
-  width: max-content;
-  visibility: hidden;
-}
-.slider {
-  width: 100px;
-  cursor: pointer;
-}
-#artist,#song,h1,p {
-  margin: 0px;
-}
-.volume-controls {
-  width: max-content;
-  grid-column-start: 3;
+.next-prev-controls {
   display: flex;
-  align-items: end;
-  grid-column-end: 5;
+  align-self: center;
 }
-.volume-controls:hover .sliderContainer {
-  visibility: visible;
-}
-#vol-icon {
-  width: 28px;
-  cursor: pointer;
-}
+
 #play-previous,#play-next {
-  width: 35px;
-  cursor: pointer;
+  width: 24px;
 }
+
 #play-previous:hover,#play-next:hover {
   background-color: rgb(208, 161, 252);
 }
-.next-prev-controls {
-  display: flex;
-  justify-content: center;
-}
-.commands {
-  display: flex;
-  justify-content: space-between;
-  grid-column-end: span 2;
-  margin-left: 25px;
-}
-.playlist,#bar,.playing,.volume-controls,.interface {
+
+.volume-controls {
+  grid-column: 3 / 5;
   margin: auto;
+  display: flex;
 }
-.playlist {
-  width: 300px;
-  background: aliceblue;
+
+.slider-container {
+  opacity: 0;
+  transition: all 0.2s ease-in;
 }
-#bar {
-  width: 300px;
-  height: 20px;
+.slider-container:hover {
+  opacity: 1;
+}
+
+#vol-icon {
+  width: 20px;
+}
+
+.vol-slider {
+  width: 70px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width:70px;
+  height: 5px;
+  background: #d2a6fa;
+  outline: none;
+  opacity: 0.7;
+}
+
+#progress-bar {
+  width: 290px;
+  height: 15px;
   grid-row-start: 6;
   grid-column-end: span 4;
   background: #d2a6fa;
+  justify-self: center;
+  align-self: center;
 }
+
 #progress {
-  width: 20px;
-  height: 20px;
+  width: 0px;
+  height: 15px;
   background-color: blueviolet;
 }
+
+#dropdown-icon {
+	width: 16px;
+	grid-area: 6 / 5;
+	align-self: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.playlist-wrapper {
+  visibility: hidden;
+  margin: auto;
+  width: 320px;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s cubic-bezier(.65,.05,.36,1);
+}
+
+.playlist-wrapper.show{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(.65,.05,.36,1);
+}
+
+.playlist {
+  background: aliceblue;
+  margin-top: 5px;
+}
+
 li {
   padding: 5px;
+  border-radius: 10px;
 }
+
 li:hover {
   background: lavender;
-  border-radius: 10px;
-  cursor: pointer;
+  
 }
+
 .song-name {
-  font-size: 30px;
+  font-size: 26px;
   text-decoration: underline;
 }
-.playlist-wrapper {
-  margin-top: 10px;
+
+#artist,#song,h1,p {
+  margin: 0px;
 }
-  
+
+.play-btn,.next-prev-controls,.volume-controls,
+#dropdown-icon,.song-card,.slider-container,.vol-slider {
+  cursor: pointer;
+}
+
+.interface,#nipper,.bar1,.bar2,.bar3,#play-previous,#play-next,.playlist {
+  border-radius: 5px;
+}
