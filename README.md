@@ -29,7 +29,7 @@
 * Volume control via slider;
 * Click on volume icon to toggle between mute/unmute;
 
-* New :* 
+**New :**
 * Added slider to toggle show / hide playlist
 
 ##### Music credits :
