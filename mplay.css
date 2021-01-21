@@ -17,7 +17,7 @@ h1 {
   display: grid;
   grid-template: repeat(3, 1fr 1fr) / repeat(2, 1fr 1fr);
   margin: auto;
-  padding: 3px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.19) , 0px 1px 10px 0px rgba(0, 0, 0, 0.14) , 0px 2px 4px -1px rgba(0,0,0,0.2);
 }
 
 #nipper {
@@ -148,6 +148,7 @@ h1 {
 .playlist {
   background: aliceblue;
   margin-top: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2) inset;
 }
 
 li {
