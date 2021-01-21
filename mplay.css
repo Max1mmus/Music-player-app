@@ -89,6 +89,8 @@ h1 {
 .slider-container {
   opacity: 0;
   transition: all 0.2s ease-in;
+  display: inherit;
+  align-self: center;
 }
 .slider-container:hover {
   opacity: 1;
@@ -103,10 +105,8 @@ h1 {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  width:70px;
   height: 5px;
   background: #d2a6fa;
-  outline: none;
   opacity: 0.7;
 }
 
