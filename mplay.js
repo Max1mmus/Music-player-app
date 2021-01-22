@@ -9,18 +9,18 @@ const playBtn = document.querySelector("div.play-btn"),
       songList = document.querySelector(".playlist"),
       volIcon = document.getElementById("vol-icon"),
       playlistWrapper = document.querySelector("div.playlist-wrapper"),
-      dropdown = document.getElementById("dropdown-icon");
+      dropdownPlaylist = document.getElementById("dropdown-icon");
 
 playBtn.addEventListener("click", playPause);
 previousNextControls.addEventListener("click", playWhich);
 volumeSlider.addEventListener("mousemove", setVolume);
 volIcon.addEventListener("click", muteVol);
-dropdown.addEventListener("click", toggleDropdown);
+dropdownPlaylist.addEventListener("click", showOrHidePlaylist);
 audio.ontimeupdate = updateTime;
 
 const playlist = [];
 let songPlayingIndex = 0;
-let toggle = false;
+let toggleDropdown = false;
 
 class Song {
     constructor (title, artist, source) {
@@ -121,10 +121,10 @@ function changeVolIcon (isMuted) {
     return isMuted ? "media/mute.png" : "media/unmute.png";
 }
 
-function toggleDropdown () {
-    toggle = !toggle;
-    toggle ? dropdown.style = "transform: rotate(-180deg);" : dropdown.style = "transform: rotate(0deg);";
-    toggle ? playlistWrapper.classList.add("show") : playlistWrapper.classList.remove("show");
+function showOrHidePlaylist () {
+    toggleDropdown = !toggleDropdown;
+    toggleDropdown ? dropdownPlaylist.style = "transform: rotate(-180deg);" : dropdownPlaylist.style = "transform: rotate(0deg);";
+    toggleDropdown ? playlistWrapper.classList.add("show") : playlistWrapper.classList.remove("show");
 }
 
 createSongCards();
