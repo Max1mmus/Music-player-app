@@ -181,3 +181,18 @@ li:hover {
 .interface,#nipper,.bar1,.bar2,.bar3,#play-previous,#play-next,.playlist {
   border-radius: 5px;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin: auto;
+}
+#heart {
+  color: lavender;
+}
+#author {
+  color: black;
+}
