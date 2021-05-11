@@ -5,7 +5,7 @@
   "main": "mplay.js",
   "devDependencies": {
     "jshint": "^2.11.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "open": "http-server -a localhost -c-1 -p 8080"
